@@ -36,8 +36,8 @@ const SideDrawer = ({fetchAgain, setFetchAgain}) => {
         }
         try{
             setLoading(true);
-            // console.log(`http://localhost:8000/api/v1/search?search=${search}`)
-            const {data} = await axios.get(`http://localhost:8000/api/v1/search?search=${search}`, {
+            // console.log(`https://backend-chatmaster-3.onrender.com/api/v1/search?search=${search}`)
+            const {data} = await axios.get(`https://backend-chatmaster-3.onrender.com/api/v1/search?search=${search}`, {
                 withCredentials: true
             });
             // console.log(data);

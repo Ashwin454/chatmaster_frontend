@@ -24,7 +24,7 @@ const MyChats = ({ loggedUser, fetchAgain, setFetchAgain }) => {
     const fetchChats = async () => {
         try {
             setLoading(true);
-            const { data } = await axios.get("http://localhost:8000/api/v1/chat/connectedChats", {
+            const { data } = await axios.get("https://backend-chatmaster-3.onrender.com/api/v1/chat/connectedChats", {
                 withCredentials: true,
             });
 

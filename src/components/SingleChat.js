@@ -12,7 +12,7 @@ import ProfileModal from "./ProfileModal";
 import UpdateGroupChatModal from "./UpdateGroupChatModal";
 import { useSendMessageMutation } from "@/lib/services/auth";
 
-const ENDPOINT = "http://localhost:8000";
+const ENDPOINT = "https://backend-chatmaster-3.onrender.com";
 var socket, selectedChatCompare;
 
 const SingleChat = ({ loggedUser, fetchAgain, setFetchAgain }) => {
@@ -35,7 +35,7 @@ const SingleChat = ({ loggedUser, fetchAgain, setFetchAgain }) => {
     try {
       setLoading(true);
       const { data } = await axios.get(
-        `http://localhost:8000/api/v1/message/${selectedChat._id}`,
+        `https://backend-chatmaster-3.onrender.com/api/v1/message/${selectedChat._id}`,
         {
           withCredentials: true,
         }

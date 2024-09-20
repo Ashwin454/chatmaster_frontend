@@ -55,7 +55,7 @@ import { useCreateGCMutation } from "@/lib/services/auth";
       try {
         setLoading(true);
         const encodedQuery = encodeURIComponent(query);
-        const {data} = await axios.get(`http://localhost:8000/api/v1/search?search=${search}`, {
+        const {data} = await axios.get(`https://backend-chatmaster-3.onrender.com/api/v1/search?search=${search}`, {
             withCredentials: true
         });
         setSearchResult(data.users);
