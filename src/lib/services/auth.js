@@ -17,9 +17,9 @@ export const authApi = createApi({
         return {
           url: 'register',
           method: 'POST',
-          body: user,
+          body: user, // Ensure user is formatted correctly (JSON or FormData)
           headers: {
-            'Content-Type': 'multipart/form-data'
+            'Content-Type': 'multipart/form-data', // Adjust this based on your data type
           },
           credentials: 'include',
         }
@@ -33,9 +33,9 @@ export const authApi = createApi({
           method: 'POST',
           body: user,
           headers: {
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json', // Use JSON if sending JSON
           },
-          mode: 'no-cors', // Set mode to no-cors
+          credentials: 'include',
         }
       }
     }),
@@ -46,10 +46,9 @@ export const authApi = createApi({
           method: 'POST',
           body: user,
           headers: {
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
           },
           credentials: 'include',
-          mode: 'no-cors', // Set mode to no-cors
         }
       }
     }),
@@ -60,10 +59,9 @@ export const authApi = createApi({
           method: 'POST',
           body: user,
           headers: {
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
           },
           credentials: 'include',
-          mode: 'no-cors', // Set mode to no-cors
         }
       }
     }),
@@ -74,10 +72,9 @@ export const authApi = createApi({
           method: 'POST',
           body: {},
           headers: {
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
           },
           credentials: 'include',
-          mode: 'no-cors', // Set mode to no-cors
         }
       }
     }),
@@ -87,12 +84,11 @@ export const authApi = createApi({
         return {
           url: `resetPass/${token.token}`,
           method: 'POST',
-          body: formData,
+          body: formData, // Adjust based on the type of data
           headers: {
-            'Content-Type': 'application/json'
+            // Do not set Content-Type for FormData, let the browser handle it
           },
           credentials: 'include',
-          mode: 'no-cors', // Set mode to no-cors
         }
       }
     }),
@@ -102,7 +98,6 @@ export const authApi = createApi({
           url: `me`,
           method: 'GET',
           credentials: 'include',
-          mode: 'no-cors', // Set mode to no-cors
         }
       }
     }),
@@ -112,7 +107,6 @@ export const authApi = createApi({
         method: 'GET',
         params: { search },
         credentials: 'include',
-        mode: 'no-cors', // Set mode to no-cors
       }),
     }),
     accessChat: builder.mutation({
@@ -122,20 +116,18 @@ export const authApi = createApi({
           method: `POST`,
           body: data,
           headers: {
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
           },
           credentials: 'include',
-          mode: 'no-cors', // Set mode to no-cors
         }
       }
     }),
     myChats: builder.query({
-      query: (data) => {
+      query: () => {
         return {
           url: `chat/connectedChats`,
           method: `GET`,
           credentials: `include`,
-          mode: 'no-cors', // Set mode to no-cors
         }
       }
     }),
@@ -146,10 +138,9 @@ export const authApi = createApi({
           method: `POST`,
           body: data,
           headers: {
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
           },
           credentials: 'include',
-          mode: 'no-cors', // Set mode to no-cors
         }
       }
     }),
@@ -160,10 +151,9 @@ export const authApi = createApi({
           method: `PUT`,
           body: data,
           headers: {
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
           },
           credentials: 'include',
-          mode: 'no-cors', // Set mode to no-cors
         }
       }
     }),
@@ -174,10 +164,9 @@ export const authApi = createApi({
           method: `PUT`,
           body: data,
           headers: {
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
           },
           credentials: 'include',
-          mode: 'no-cors', // Set mode to no-cors
         }
       }
     }),
@@ -188,10 +177,9 @@ export const authApi = createApi({
           method: `DELETE`,
           body: data,
           headers: {
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
           },
           credentials: 'include',
-          mode: 'no-cors', // Set mode to no-cors
         }
       }
     }),
@@ -202,10 +190,9 @@ export const authApi = createApi({
           method: `POST`,
           body: data,
           headers: {
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
           },
           credentials: 'include',
-          mode: 'no-cors', // Set mode to no-cors
         }
       }
     }),
@@ -215,7 +202,6 @@ export const authApi = createApi({
           url: `message/${data.userId}`,
           method: `GET`,
           credentials: 'include',
-          mode: 'no-cors', // Set mode to no-cors
         }
       }
     }),
