@@ -28,6 +28,7 @@ export const authApi = createApi({
     }),
     verifyEmail: builder.mutation({
       query: (user) => {
+        console.log(user);
         return {
           url: 'verify-email',
           method: 'POST',
