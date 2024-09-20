@@ -3,11 +3,11 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 // Define a service using a base URL and expected endpoints
 export const authApi = createApi({
   reducerPath: 'authApi',
-  baseQuery: fetchBaseQuery({ baseUrl: 'http://localhost:8000/api/v1/' }),
+  baseQuery: fetchBaseQuery({ baseUrl: 'https://backend-chatmaster-3.onrender.com/api/v1/' }),
   endpoints: (builder) => ({
     createUser: builder.mutation({
         query:(user)=>{
-            // console.log("User: ",user);
+            console.log("User: ",user);
             return{
                 url:'register',
                 method:'POST',
