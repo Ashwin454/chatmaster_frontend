@@ -22,7 +22,6 @@ export const authApi = createApi({
             'Content-Type': 'multipart/form-data'
           },
           credentials: 'include',
-          mode: 'no-cors', // Set mode to no-cors
         }
       }
     }),
